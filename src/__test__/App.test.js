@@ -1,12 +1,11 @@
 import { shallow, configure } from 'enzyme'
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
 import { useChronometer } from '../components/Hooks/useChronometer'
-import { CardChronometer } from '../components/ORGANISMS/CardChronometer'
 configure({ adapter: new Adapter() })
 
 
 describe('<useChronometer/>', () => {
-    test('run started ', () => {
+    test('should change the state of start ', () => {
         const TestComponent = (props) => {
             const hook = props.hook()
             return <div {...hook}></div>
@@ -18,7 +17,7 @@ describe('<useChronometer/>', () => {
         expect(props.start).toEqual(true)
 
     })
-    test('finalize ', () => {
+    test('it should change the start and stop state as well as reset the chronometer ', () => {
         const TestComponent = (props) => {
             const hook = props.hook()
             return <div {...hook}></div>
@@ -37,7 +36,7 @@ describe('<useChronometer/>', () => {
         })
 
     })
-    test('stopped ', () => {
+    test('should change the state of stop to true ', () => {
         const TestComponent = (props) => {
             const hook = props.hook()
             return <div {...hook}></div>
@@ -48,7 +47,7 @@ describe('<useChronometer/>', () => {
         props = wrapper.find('div').props()
         expect(props.stop).toEqual(true)
     })
-    test('resume ', () => {
+    test('should change the state of stop to false ', () => {
         const TestComponent = (props) => {
             const hook = props.hook()
             return <div {...hook}></div>
@@ -59,7 +58,7 @@ describe('<useChronometer/>', () => {
         props = wrapper.find('div').props()
         expect(props.stop).toEqual(false)
     })
-    test('clear ', () => {
+    test('should reset the chronometer and change the state of stop to false  ', () => {
         const TestComponent = (props) => {
             const hook = props.hook()
             return <div {...hook}></div>
