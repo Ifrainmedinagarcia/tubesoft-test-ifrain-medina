@@ -33,7 +33,7 @@ export function useChronometer() {
             udatedTime.m++
             udatedTime.s = 0
         }
-        if (udatedTime.ms === 99) {
+        if (udatedTime.ms === 100) {
             udatedTime.s++
             udatedTime.ms = 0
         }

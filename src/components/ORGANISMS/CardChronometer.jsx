@@ -13,7 +13,7 @@ import { useChronometer } from '../Hooks/useChronometer'
 
 const useStyle = makeStyles(cardChronometer)
 
-const CardChronometer = ({ time, deleteTime }) => {
+export const CardChronometer = ({ time, deleteTime }) => {
     const classes = useStyle()
     const { started, stopped, clear, timeStatus, start, stop, finalize, resume } = useChronometer()
 
