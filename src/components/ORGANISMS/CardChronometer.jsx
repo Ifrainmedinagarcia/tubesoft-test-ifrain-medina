@@ -50,12 +50,11 @@ export const CardChronometer = ({ time, deleteTime }) => {
                             !stop ?
                                 <Button onClick={stopped} variant="contained" size='large' color="secondary">
                                     Stop
-                            </Button>
+                                </Button>
                                 :
                                 <Button onClick={resume} variant="contained" size='large' color="secondary">
                                     Resume
-                            </Button>
-
+                                </Button>
                         }
                     </Grid>
             }
